@@ -6,7 +6,7 @@ describe('User Story 6', () => {
         cy.clearAllCookies()
         cy.viewport('macbook-16')
         cy.visit('https://qatestchallenge3.humanforce.io/Account/LogOn?ReturnUrl=%2f')
-        cy.loginTestTenant('EMP01', 'Q@T3chCh4lleng3#')
+        cy.loginTestTenant(Cypress.env('ADMIN_USERNAME'), Cypress.env('PASSWORD'))
     })
     
     it('Employee is not allowed to Access Rostering Manager', () => {

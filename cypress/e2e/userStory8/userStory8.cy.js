@@ -6,7 +6,7 @@ describe('User Story 8', () => {
         cy.clearAllCookies()
         cy.viewport('macbook-16')
         cy.visit('https://qatestchallenge3.humanforce.io/Account/LogOn?ReturnUrl=%2f')
-        cy.loginTestTenant('MGR01', 'Q@T3chCh4lleng3#')
+        cy.loginTestTenant(Cypress.env('MANAGER_USERNAME'), Cypress.env('PASSWORD'))
     })
     
     it('Manager can navigate to Employee Management', () => {
