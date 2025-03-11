@@ -8,12 +8,13 @@ class homePage {
     btnOrgStructure = () => cy.get('button[id="MenuItem_Button_Org Structure"]')
     btnSubItemArea = () => cy.get('#MenuSubItem_Button_Areas')
     btnHome = () => cy.get('a[id="MenuItem_Button_Home"]')
+    lnkViewAllMessages = () => cy.get('a[href="/WebApp/modules/messages"]')
 
     clickHomeButton() {
         this.btnHome().click()
     }
 
-    validateEmployeeHomePage() {
+    validateTestTenantHomePage() {
         this.contEmployeeOverview().should('be.visible')
         this.headerHome().should('be.visible')
     }
@@ -44,6 +45,10 @@ class homePage {
 
     clickSubItemArea() {
         this.btnSubItemArea().click()
+    }
+
+    clickViewAllMessagesLink() {
+        this.lnkViewAllMessages().click()
     }
 
 }

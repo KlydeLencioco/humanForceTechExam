@@ -13,7 +13,7 @@ describe('User Story 4', () => {
     })
 
     it('Admin can navigate to Admin Area ', () => {
-        testTenantHomePage.validateEmployeeHomePage()
+        testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.clickAdminButton()
         testTenantHomePage.clickOrgStructureButton()
         testTenantHomePage.clickSubItemArea()
