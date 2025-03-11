@@ -11,7 +11,7 @@ describe('User Story 8', () => {
     })
     
     it('Manager can navigate to Employee Management', () => {
-        testTenantHomePage.validateEmployeeHomePage()
+        testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.clickManagementButton()
         testTenantHomePage.clickManageEmployeeButton()
         testTenantHomePage.clickSubItemEmployeeManagement()

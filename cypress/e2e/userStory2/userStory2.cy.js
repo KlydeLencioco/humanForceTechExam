@@ -12,7 +12,7 @@ describe('User Story 2', () => {
         testTenantLoginPage.typeUsername(Cypress.env('EMPLOYEE_USERNAME'))
         testTenantLoginPage.typePassword(Cypress.env('PASSWORD'))
         testTenantLoginPage.clickLoginButton()
-        testTenantHomePage.validateEmployeeHomePage()
+        testTenantHomePage.validateTestTenantHomePage()
     })
 
     it('Employee cannot login with invalid credentials', () => {
