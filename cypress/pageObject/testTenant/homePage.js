@@ -9,6 +9,8 @@ class homePage {
     btnSubItemArea = () => cy.get('#MenuSubItem_Button_Areas')
     btnHome = () => cy.get('a[id="MenuItem_Button_Home"]')
     lnkViewAllMessages = () => cy.get('a[href="/WebApp/modules/messages"]')
+    btnTimeSheetsAdmin = () => cy.get('[id="MenuItem_Button_Timesheets"]')
+    btnSubItemTimesheetsAdmin = () => cy.get('#MenuSubItem_Button_Timesheets')
 
     clickHomeButton() {
         this.btnHome().click()
@@ -49,6 +51,14 @@ class homePage {
 
     clickViewAllMessagesLink() {
         this.lnkViewAllMessages().click()
+    }
+
+    clickTimeSheetsAdminButton (){
+        this.btnTimeSheetsAdmin().click()
+    }
+
+    clickSubItemTimeSheetsAdminButton () {
+        this.btnSubItemTimesheetsAdmin().click()
     }
 
 }

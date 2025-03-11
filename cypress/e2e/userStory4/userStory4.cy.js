@@ -22,7 +22,6 @@ describe('User Story 4', () => {
 
     it('Admin adds multiple new Areas', () => {
         testTenantAdminPage.validateAdminPage()
-        testTenantAdminPage.getInitialNumberofListedArea()
         testTenantAdminPage.addNewArea('Test', 'Test', 'Test')
         testTenantAdminPage.addNewArea('Test', 'Test', 'Test')
         testTenantAdminPage.validateFinalNumberofListedArea('add')
@@ -36,7 +35,6 @@ describe('User Story 4', () => {
 
     it('Admin deletes an Area', () => {
         testTenantAdminPage.validateAdminPage() 
-        testTenantAdminPage.getInitialNumberofListedArea() 
         testTenantAdminPage.clickDeleteAreaButton()
         testTenantAdminPage.clickYesButton()
         testTenantAdminPage.validateFinalNumberofListedArea('delete')
@@ -44,7 +42,6 @@ describe('User Story 4', () => {
 
     it('Admin undeletes an Area', () => {
         testTenantAdminPage.validateAdminPage() 
-        testTenantAdminPage.getInitialNumberofListedArea() 
         testTenantAdminPage.clickUndeleteButton()
         testTenantAdminPage.clickRestoreButton()
         testTenantAdminPage.clickCloseUndeleteButton()

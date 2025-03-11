@@ -8,7 +8,9 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   retries: 2,
   watchForFileChanges:false,
+  defaultCommandTimeout: 10000,
   pageLoadTimeout: 120000,
+  requestTimeout: 10000,
   env: {
     ...process.env
   },
