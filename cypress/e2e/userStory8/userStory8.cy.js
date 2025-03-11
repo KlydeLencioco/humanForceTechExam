@@ -7,6 +7,7 @@ describe('User Story 8', () => {
         cy.viewport('macbook-16')
         cy.visit('https://qatestchallenge3.humanforce.io/Account/LogOn?ReturnUrl=%2f')
         cy.loginTestTenant(Cypress.env('MANAGER_USERNAME'), Cypress.env('PASSWORD'))
+        testTenantHomePage.clickHomeButton() // click home button to ensure that all menu side bar are collapse at the start of the test
     })
     
     it('Manager can navigate to Employee Management', () => {
