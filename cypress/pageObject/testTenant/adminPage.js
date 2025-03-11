@@ -25,6 +25,12 @@ class adminPage {
 
     validateAdminPage() {
         this.gridArea().should('be.visible')
+
+        // get initial number of listed area to be used in validation later
+        this.tblAreaList().then(($listNumber) => {
+            let listNumber = $listNumber.length
+            cy.wrap(listNumber).as('initialListNumber')
+        })
     }
 
     clickAddNewRecord() {
