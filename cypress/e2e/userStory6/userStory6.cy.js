@@ -9,13 +9,13 @@ describe('User Story 6', () => {
         cy.loginTestTenant(Cypress.env('ADMIN_USERNAME'), Cypress.env('PASSWORD'))
     })
     
-    it('Employee is not allowed to Access Rostering Manager', () => {
+    it('Employee is prevented when accessing /RosteringManager/', () => {
         testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.navigateToRosteringManagerPage()
         testTenantErrorPage.validateErrorPage()
     })
 
-    it('Employee is navigated back to Home Page when clicking home button', () => {
+    it('Employee navigates back to home page', () => {
         testTenantErrorPage.validateErrorPage()
         testTenantErrorPage.clickHomeButton()
         testTenantHomePage.validateTestTenantHomePage()

@@ -10,7 +10,7 @@ describe('User Story 8', () => {
         testTenantHomePage.clickHomeButton() // click home button to ensure that all menu side bar are collapse at the start of the test
     })
     
-    it('Manager can navigate to Employee Management', () => {
+    it('Manager navigates to Employee Management', () => {
         testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.clickManagementButton()
         testTenantHomePage.clickManageEmployeeButton()
@@ -18,7 +18,7 @@ describe('User Story 8', () => {
         testTenantEmployeeManagementPage.validateEmployeeManagementPage()
     })
 
-    it('Manager is not allowed to edit his/her own profile', () => {
+    it('Manager navigates to Employee Management', () => {
         testTenantEmployeeManagementPage.validateEmployeeManagementPage()
         testTenantEmployeeManagementPage.clickEditButton('117')
         testTenantEmployeeManagementPage.validateWarningDialogVisible()

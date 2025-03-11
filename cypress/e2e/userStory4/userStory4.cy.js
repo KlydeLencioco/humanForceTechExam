@@ -12,7 +12,7 @@ describe('User Story 4', () => {
         
     })
 
-    it('Admin can navigate to Admin Area ', () => {
+    it('Admin navigates to Area Page', () => {
         testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.clickAdminButton()
         testTenantHomePage.clickOrgStructureButton()
@@ -20,7 +20,7 @@ describe('User Story 4', () => {
         testTenantAdminPage.validateAdminPage()
     })
 
-    it('Admin can add multiple new area', () => {
+    it('Admin adds multiple new Areas', () => {
         testTenantAdminPage.validateAdminPage()
         testTenantAdminPage.getInitialNumberofListedArea()
         testTenantAdminPage.addNewArea('Test', 'Test', 'Test')
@@ -28,13 +28,13 @@ describe('User Story 4', () => {
         testTenantAdminPage.validateFinalNumberofListedArea('add')
     })
 
-    it('Admin can edit an area', () => {
+    it('Admin edit an Area', () => {
         testTenantAdminPage.validateAdminPage()        
         testTenantAdminPage.editArea('TestEdit', 'TestEdit', 'TestEdit')
         testTenantAdminPage.validateEditedArea('TestEdit', 'TestEdit')
     })
 
-    it('Admin can delete an area', () => {
+    it('Admin deletes an Area', () => {
         testTenantAdminPage.validateAdminPage() 
         testTenantAdminPage.getInitialNumberofListedArea() 
         testTenantAdminPage.clickDeleteAreaButton()
@@ -42,7 +42,7 @@ describe('User Story 4', () => {
         testTenantAdminPage.validateFinalNumberofListedArea('delete')
     })
 
-    it('Admin can undelete an area', () => {
+    it('Admin undeletes an Area', () => {
         testTenantAdminPage.validateAdminPage() 
         testTenantAdminPage.getInitialNumberofListedArea() 
         testTenantAdminPage.clickUndeleteButton()
