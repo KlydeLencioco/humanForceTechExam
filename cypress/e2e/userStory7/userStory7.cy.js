@@ -9,13 +9,13 @@ describe('User Story 7', () => {
         cy.loginTestTenant(Cypress.env('ADMIN_USERNAME'), Cypress.env('PASSWORD'))
     })
     
-    it('Admin can navigate to Message', () => {
+    it('Admin navigates to message and view all messages', () => {
         testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.clickViewAllMessagesLink()
         testTenantMessagePage.validateMessagesPage()
     })
 
-    it('Admin can create a new message', () => {
+    it('Admin selects a recipient and send a message', () => {
         testTenantMessagePage.validateMessagesPage()
         testTenantMessagePage.clickNewMessageButton()
         testTenantMessagePage.selectRecipient()

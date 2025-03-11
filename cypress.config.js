@@ -15,17 +15,31 @@ module.exports = defineConfig({
   include :[
     "cypress/**/*.js"
   ],
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportFilename: 'report',
+    reportPageTitle: 'HumanForce Automation Test Report',
+    overwrite: true,
+    charts: true,
+    json: true,
+    html: true,
+    inlineAssets: true,
+    embeddedScreenshots: true,
+    saveAllAttempts: false,
+  },
   e2e: {
     testIsolation: false,
-    async setupNodeEvents(on, config) {
+    setupNodeEvents(on, config) {
       // implement node event listeners here
-      await addCucumberPreprocessorPlugin(on, config);
-      on(
-        "file:preprocessor",
-        createBundler({
-          plugins: [createEsbuildPlugin(config)],
-        })
-      );
+      require('cypress-mochawesome-reporter/plugin')(on);
+
+      // await addCucumberPreprocessorPlugin(on, config);
+      // on(
+      //   "file:preprocessor",
+      //   createBundler({
+      //     plugins: [createEsbuildPlugin(config)],
+      //   })
+      // );
     },
   },
 });

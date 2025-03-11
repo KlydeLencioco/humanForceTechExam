@@ -8,27 +8,27 @@ describe('User Story 2', () => {
         cy.visit('https://qatestchallenge3.humanforce.io/Account/LogOn?ReturnUrl=%2f')
     })
     
-    it('Employee can login with valid credentials', () => {
+    it('Login with valid employee credentials', () => {
         testTenantLoginPage.typeUsername(Cypress.env('EMPLOYEE_USERNAME'))
         testTenantLoginPage.typePassword(Cypress.env('PASSWORD'))
         testTenantLoginPage.clickLoginButton()
         testTenantHomePage.validateTestTenantHomePage()
     })
 
-    it('Employee cannot login with invalid credentials', () => {
+    it('Login with invalid employee  credentials', () => {
         testTenantLoginPage.typeUsername(Cypress.env('EMPLOYEE_USERNAME'))
         testTenantLoginPage.typePassword('12345678')
         testTenantLoginPage.clickLoginButton()
         testTenantLoginPage.validateErrorInvalidLogin()
     })
 
-    it('Employee cannot login with empty username', () => {
+    it('Login with empty username', () => {
         testTenantLoginPage.typePassword(Cypress.env('PASSWORD'))
         testTenantLoginPage.clickLoginButton()
         testTenantLoginPage.validateErrorMissingEmailOrEmployeeCode()
     })
 
-    it('Employee cannot login with empty password', () => {
+    it('Login with empty password', () => {
         testTenantLoginPage.typeUsername(Cypress.env('EMPLOYEE_USERNAME'))
         testTenantLoginPage.clickLoginButton()
         testTenantLoginPage.validateErrorInvalidLogin()
