@@ -7,6 +7,11 @@ class homePage {
     btnMenuAdmin = () => cy.get('button[id="MenuItem_Button_Admin"]')
     btnOrgStructure = () => cy.get('button[id="MenuItem_Button_Org Structure"]')
     btnSubItemArea = () => cy.get('#MenuSubItem_Button_Areas')
+    btnHome = () => cy.get('a[id="MenuItem_Button_Home"]')
+
+    clickHomeButton() {
+        this.btnHome().click()
+    }
 
     validateEmployeeHomePage() {
         this.contEmployeeOverview().should('be.visible')
