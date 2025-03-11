@@ -7,8 +7,16 @@ class homePage {
     btnMenuAdmin = () => cy.get('button[id="MenuItem_Button_Admin"]')
     btnOrgStructure = () => cy.get('button[id="MenuItem_Button_Org Structure"]')
     btnSubItemArea = () => cy.get('#MenuSubItem_Button_Areas')
+    btnHome = () => cy.get('a[id="MenuItem_Button_Home"]')
+    lnkViewAllMessages = () => cy.get('a[href="/WebApp/modules/messages"]')
+    btnTimeSheetsAdmin = () => cy.get('[id="MenuItem_Button_Timesheets"]')
+    btnSubItemTimesheetsAdmin = () => cy.get('#MenuSubItem_Button_Timesheets')
 
-    validateEmployeeHomePage() {
+    clickHomeButton() {
+        this.btnHome().click()
+    }
+
+    validateTestTenantHomePage() {
         this.contEmployeeOverview().should('be.visible')
         this.headerHome().should('be.visible')
     }
@@ -39,6 +47,18 @@ class homePage {
 
     clickSubItemArea() {
         this.btnSubItemArea().click()
+    }
+
+    clickViewAllMessagesLink() {
+        this.lnkViewAllMessages().click()
+    }
+
+    clickTimeSheetsAdminButton (){
+        this.btnTimeSheetsAdmin().click()
+    }
+
+    clickSubItemTimeSheetsAdminButton () {
+        this.btnSubItemTimesheetsAdmin().click()
     }
 
 }

@@ -6,18 +6,18 @@ describe('User Story 6', () => {
         cy.clearAllCookies()
         cy.viewport('macbook-16')
         cy.visit('https://qatestchallenge3.humanforce.io/Account/LogOn?ReturnUrl=%2f')
-        cy.loginTestTenant('EMP01', 'Q@T3chCh4lleng3#')
+        cy.loginTestTenant(Cypress.env('ADMIN_USERNAME'), Cypress.env('PASSWORD'))
     })
     
-    it('Employee is not allowed to Access Rostering Manager', () => {
-        testTenantHomePage.validateEmployeeHomePage()
+    it('Employee is prevented when accessing /RosteringManager/', () => {
+        testTenantHomePage.validateTestTenantHomePage()
         testTenantHomePage.navigateToRosteringManagerPage()
         testTenantErrorPage.validateErrorPage()
     })
 
-    it('Employee is navigated back to Home Page when clicking home button', () => {
+    it('Employee navigates back to home page', () => {
         testTenantErrorPage.validateErrorPage()
         testTenantErrorPage.clickHomeButton()
-        testTenantHomePage.validateEmployeeHomePage()
+        testTenantHomePage.validateTestTenantHomePage()
     })
 })
