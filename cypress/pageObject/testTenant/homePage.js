@@ -61,6 +61,10 @@ class homePage {
         this.btnSubItemTimesheetsAdmin().click()
     }
 
+    navigateToIntegrationsCentralPage () {
+        cy.visit('https://qatestchallenge3.humanforce.io/IntegrationsCentral')
+    }
+
 }
 
 export default new homePage()

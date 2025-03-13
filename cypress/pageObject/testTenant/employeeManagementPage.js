@@ -2,6 +2,7 @@ class employeeManagementPage {
     headerEmployeeManagement = () => cy.get('[class="header header-underlined"]')
     tableEmployeeList = () => cy.get('table[class="employee-list regular-table"]')
     btnEmployeeEdit = (employeeIdNo) => cy.get(`tr[data-employeeid="${employeeIdNo}"] button[data-employeeid="${employeeIdNo}"]`)
+    drpVenue = () => cy.get('select[id="LocationId"]')
 
     clickEditButton(employeeIdNo) {
         cy.preOpenInCurrentTab()
@@ -11,6 +12,10 @@ class employeeManagementPage {
     validateEmployeeManagementPage() {
         this.headerEmployeeManagement().should('be.visible')
         this.tableEmployeeList().should('be.visible')
+    }
+
+    selectDropDownVenue() {
+        this.drpVenue().select("0")
     }
 
     //Edit Employee
