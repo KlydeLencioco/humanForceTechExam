@@ -19,10 +19,9 @@ class timeSheetAdminPage {
         this.btnAddNewTimeSheet().should('be.visible')
 
         // get initial number of listed timesheet to be used in validation later
-        this.tblTimeSheetList().then(($listNumber) => {
-            let listNumber = $listNumber.length
-            cy.wrap(listNumber).as('initialListNumber')
-        })
+        cy.getList('kendo-grid-list[role="presentation"] [role="row"]')
+
+        
     }
 
     clickAddNewTimeSheetButton() {
@@ -76,6 +75,7 @@ class timeSheetAdminPage {
     }
 
     valdateNumberOfListedTimeSheet (method){
+        cy.wait(2000)
         this.tblTimeSheetList().then(($listNumber) => {
             let listNumber = $listNumber.length
             cy.wrap(listNumber).as('finalListNumber')
