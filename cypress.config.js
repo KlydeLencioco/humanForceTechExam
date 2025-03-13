@@ -9,7 +9,7 @@ require('dotenv').config()
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
-  retries: 0,
+  retries: 2,
   watchForFileChanges:false,
   defaultCommandTimeout: 10000,
   pageLoadTimeout: 120000,

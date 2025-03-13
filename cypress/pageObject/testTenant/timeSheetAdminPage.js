@@ -76,19 +76,14 @@ class timeSheetAdminPage {
 
     valdateNumberOfListedTimeSheet (method){
         cy.wait(2000)
-        this.tblTimeSheetList().then(($listNumber) => {
-            let listNumber = $listNumber.length
-            cy.wrap(listNumber).as('finalListNumber')
-            cy.get('@initialListNumber').then((initialListNumber) => {
-                if(method == 'add'){
-                    expect(listNumber).to.be.greaterThan(initialListNumber)
-                }else if(method == 'delete'){
-                    expect(listNumber).to.be.lessThan(initialListNumber)
-                }
-            })
+        cy.get('@initialListNumber').then((initialListNumber) => {
+            if(method == 'add'){
+                expect(Cypress.$('kendo-grid-list[role="presentation"] [role="row"]').length).to.be.greaterThan(initialListNumber)
+            }else if(method == 'delete'){
+                expect(Cypress.$('kendo-grid-list[role="presentation"] [role="row"]').length).to.be.lessThan(initialListNumber)
+            }
         })
     }
-
 }
 
 export default new timeSheetAdminPage()
