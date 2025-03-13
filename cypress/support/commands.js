@@ -41,3 +41,16 @@ Cypress.Commands.add('preOpenInCurrentTab', () => {
         })
     })
 })
+
+Cypress.Commands.add('getList', (selector) => {
+    cy.wait(2000)
+    let listNumber
+
+    if(Cypress.$(selector).length === 0) {
+            listNumber = 0
+            cy.wrap(listNumber).as('initialListNumber')
+    }else{
+        listNumber = Cypress.$(selector).length
+        cy.wrap(listNumber).as('initialListNumber')
+    }
+})

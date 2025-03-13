@@ -19,10 +19,9 @@ class timeSheetAdminPage {
         this.btnAddNewTimeSheet().should('be.visible')
 
         // get initial number of listed timesheet to be used in validation later
-        this.tblTimeSheetList().then(($listNumber) => {
-            let listNumber = $listNumber.length
-            cy.wrap(listNumber).as('initialListNumber')
-        })
+        cy.getList('kendo-grid-list[role="presentation"] [role="row"]')
+
+        
     }
 
     clickAddNewTimeSheetButton() {
@@ -76,19 +75,15 @@ class timeSheetAdminPage {
     }
 
     valdateNumberOfListedTimeSheet (method){
-        this.tblTimeSheetList().then(($listNumber) => {
-            let listNumber = $listNumber.length
-            cy.wrap(listNumber).as('finalListNumber')
-            cy.get('@initialListNumber').then((initialListNumber) => {
-                if(method == 'add'){
-                    expect(listNumber).to.be.greaterThan(initialListNumber)
-                }else if(method == 'delete'){
-                    expect(listNumber).to.be.lessThan(initialListNumber)
-                }
-            })
+        cy.wait(2000)
+        cy.get('@initialListNumber').then((initialListNumber) => {
+            if(method == 'add'){
+                expect(Cypress.$('kendo-grid-list[role="presentation"] [role="row"]').length).to.be.greaterThan(initialListNumber)
+            }else if(method == 'delete'){
+                expect(Cypress.$('kendo-grid-list[role="presentation"] [role="row"]').length).to.be.lessThan(initialListNumber)
+            }
         })
     }
-
 }
 
 export default new timeSheetAdminPage()
